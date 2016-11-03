@@ -1,4 +1,4 @@
-Same setup as (smilledge/acf-sublime-snippets)[https://github.com/smilledge/acf-sublime-snippets] but for VSC.
+Same setup as [smilledge/acf-sublime-snippets](https://github.com/smilledge/acf-sublime-snippets) but for VSC.
 
 ## Current Snippets
 
