@@ -29,10 +29,23 @@
 		"prefix": "field",
 		"body": [
 			"<?php if ( get_field('${1:field_name}')): ?>",
+			"",
 			"	<?php echo get_field('${1:field_name}'); ?>",
+			"",
 			"<?php endif; ?>"
 		],
 		"description": "Display ACF field"
+	},
+	"ACF Sub Field": {
+		"prefix": "field:sub",
+		"body": [
+			"<?php if ( get_sub_field('${1:field_name}')): ?>",
+			"",
+			"	<?php echo get_sub_field('${1:field_name}'); ?>",
+			"",
+			"<?php endif; ?>"
+		],
+		"description": "Display ACF sub field"
 	}
 }
 

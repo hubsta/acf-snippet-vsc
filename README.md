@@ -21,12 +21,36 @@ Get and loop over a repeater field
 ```
 ### If Field
 
-**`field:if` / `field:ifelse` (HTML)**
+**`field:if` (HTML)**
 
 Field conditional. Also used for true/false fields.
 
 ```
-<?php if ( get_field('field_name') ) : ?>
+<?php if ( get_field('field_name')): ?>
+
 <?php endif; ?>
 ```
 
+**`field` (HTML)**
+
+```
+<?php if ( get_field('field_name')): ?>
+
+  <?php echo get_field('{field_name}'); ?>
+  
+<?php endif; ?>
+```
+
+### If Sub Field
+
+**`field:sub` (HTML)**
+
+Field conditional. Also used for true/false fields.
+
+```
+<?php if ( get_sub_field('field_name')): ?>
+
+  <?php echo get_sub_field('{field_name}'); ?>
+  
+<?php endif; ?>
+```
