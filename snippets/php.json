@@ -1,0 +1,32 @@
+{
+	 "ACF Repeater": {
+		"prefix": "field:repeater",
+		"body": [
+			"<?php if ( have_rows('${1:field_name}')) : ?>",
+			"	<?php while( have_rows('${1:field_name}') ) : the_row(); ?>",
+			"		<?php the_sub_field('${3:sub_field_name}'); ?>$4",
+			"	<?php endwhile; ?>",
+			"<?php endif; ?>"
+		],
+		"description": "ACF repeater field"
+	},
+	"ACF If Field": {
+		"prefix": "field:if",
+		"body": [
+			"<?php if ( get_field('${1:field_name}') ) : ?>",
+			"	$2",
+			"<?php endif; ?>"
+		],
+		"description": "ACF true/false"
+	},
+	"ACF the Field": {
+		"prefix": "field",
+		"body": [
+			"<?php if ( get_field('${1:field_name}')): ?>",
+			"	<?php echo get_field('${1:field_name}'); ?>",
+			"<?php endif; ?>"
+		],
+		"description": "Display ACF field"
+	}
+}
+

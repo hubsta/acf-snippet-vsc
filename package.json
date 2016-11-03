@@ -1,0 +1,16 @@
+{
+    "name": "ACF-Snippet",
+    "publisher": "anthonydiametrix",
+    "description": "Advanced Custom Fields Snippets",
+    "version": "0.1.3",
+    "engines": { "vscode": "0.10.x" },
+    "categories": ["Snippets"], 
+    "contributes": {
+        "snippets": [
+            {
+                "language": "php",
+                "path": "./snippets/php.json"
+            }
+        ]
+    }
+}
