@@ -48,7 +48,7 @@
 		"description": "Display ACF sub field"
 	},
 	"ACF Flexible Field": {
-		"prefix": "field:flexible",
+		"prefix": "field:flex",
 		"body": [
 			"<?php if (have_rows('${1:field_name}')): ?>",
 			"",
