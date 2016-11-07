@@ -1,7 +1,7 @@
 {
     "name": "ACF-Snippet",
     "publisher": "anthonydiametrix",
-    "description": "Advanced Custom Fields Snippets",
+    "description": "Advanced Custom Field Snippets",
     "version": "0.2.0",
     "engines": {
         "vscode": "0.10.x"
