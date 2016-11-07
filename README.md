@@ -57,7 +57,7 @@ Field conditional. Also used for true/false fields.
 
 ### Flexible Content
 
-**`field:flex` (HTML)**
+**`field:flexible` (HTML)**
 
 ```
 <?php if( have_rows('flexible_content_field_name') ): ?>

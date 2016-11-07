@@ -25,6 +25,29 @@
 		],
 		"description": "ACF true/false"
 	},
+	"ACF Flexible Field": {
+		"prefix": "field:flexible",
+		"body": [
+			"<?php if (have_rows('${1:field_name}')): ?>",
+			"",
+			"	<?php while (have_rows('${1:field_name}')) : the_row(); ?>",
+			"",
+			"		<?php if( get_row_layout() == '${2:row_name}' ): ?>",
+			"",
+			"			<?php the_sub_field('text'); ?>",
+			"",
+			"		<?php elseif( get_row_layout() == 'download' ): ?>",
+			"",
+			"			<?php $file = get_sub_field('file'); ?>",
+			"",
+			"		 <?php endif; ?>",
+			"",
+			"	 <?php endwhile; ?>",
+			"",
+			"<?php endif; ?>"
+		],
+		"description": "Display ACF flexible field"
+	},
 	"ACF the Field": {
 		"prefix": "field",
 		"body": [
@@ -46,28 +69,5 @@
 			"<?php endif; ?>"
 		],
 		"description": "Display ACF sub field"
-	},
-	"ACF Flexible Field": {
-		"prefix": "field:flex",
-		"body": [
-			"<?php if (have_rows('${1:field_name}')): ?>",
-			"",
-			"	<?php while (have_rows('${1:field_name}')) : the_row(); ?>",
-			"",
-			"		<?php if( get_row_layout() == '${2:row_name}' ): ?>",
-			"",
-			"			<?php the_sub_field('text'); ?>",
-			"",
-			"		<?php elseif( get_row_layout() == 'download' ): ?>",
-			"",
-			"			<?php $file = get_sub_field('file'); ?>",
-			"",
-			"		 <?php endif; ?>",
-			"",
-			"	 <?php endwhile; ?>",
-			"",
-			"<?php endif; ?>"
-		],
-		"description": "Display ACF flexible field"
 	}
 }
