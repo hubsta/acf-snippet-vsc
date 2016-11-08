@@ -1,5 +1,17 @@
 Same setup as [smilledge/acf-sublime-snippets](https://github.com/smilledge/acf-sublime-snippets) but for VSC.
 
+## Contributors
+
+<!-- Contributors START
+Anthony_Hubble hubsta http://github.com/hubsta doc
+Michael_Mano michaelmano https://github.com/michaelmano doc tools
+Contributors END -->
+<!-- Contributors table START -->
+
+| [![Anthony Hubble](https://avatars.githubusercontent.com/hubsta?s=100)<br /><sub>Anthony Hubble</sub>](http://github.com/hubsta)<br />[](https://github.com/kentcdodds/all-contributors/commits?author=hubsta) | [![Michael Mano](https://avatars.githubusercontent.com/michaelmano?s=100)<br /><sub>Michael Mano</sub>](https://github.com/michaelmano)<br />[](https://github.com/kentcdodds/all-contributors/commits?author=michaelmano) |
+| :---: | :---: |
+<!-- Contributors table END -->
+
 
 ## Snippets
 
