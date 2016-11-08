@@ -12,9 +12,9 @@ All tab triggers follow the following naming convention; `field:{field type}:{ty
 Get a field by name. (Header / text / link fields will be wrapped in `<h*>` / `<p>` / `<a>` tags)
 
 ```
-<?$php if ( get_field('field_name') ) : ?>
-  <?$php echo get_field('field_name'); ?>
-<?$php endif; ?>
+<?php if ( get_field('field_name') ) : ?>
+  <?php echo get_field('field_name'); ?>
+<?php endif; ?>
 ```
 
 **`field:date` (HTML/PHP)**
