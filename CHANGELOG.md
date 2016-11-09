@@ -1,3 +1,6 @@
+## 1.5.0
+Removed and fixed unused lines.
+
 ## 1.3.0
 
 Created Sub field

@@ -124,19 +124,9 @@
 		"body": "\r\n<?php if ( get_field('${1:field_name}') ) : ?>\r\n\t<p><?php echo get_field('${1:field_name}'); ?></p>\r\n<?php endif; ?>\r\n\t",
 		"description": "Display ACF text field"
 	},
-	"ddfield1": {
-		"prefix": "ddfield",
-		"body": "\r\necho \"<pre>\";\r\nvar_dump(get_field('${1:field_name}'));\r\ndie();\r\n\t",
-		"description": "Dump ACF field"
-	},
-	"field:option1": {
-		"prefix": "field:option",
-		"body": "\r\nif( get_field('${1:field_name}', 'option') ) {\r\n\techo get_field('${1:field_name}', 'option');\r\n}\r\n\t",
-		"description": "Display ACF option field"
-	},
 	"field:sub": {
 		"prefix": "field:sub",
-		"body": "\r\nif( get_sub_field('${1:field_name}') ) {\r\n\techo get_sub_field('${1:field_name}');\r\n}\r\n\t",
+		"body": "\r\n<?php if( get_sub_field('${1:field_name}') ) : ?>\r\n\t<?php echo get_sub_field('${1:field_name}'); ?>\r\n<?php endif; ?>\r\n\t",
 		"description": "Display ACF sub field"
 	}
 }
