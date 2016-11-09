@@ -125,6 +125,47 @@ File field with a return value of "File Object"
   <a href="<?php echo $file['url']; ?>"><?php echo $file['title']; ?></a>
 <?php endif; ?>
 ```
+
+### Flexible Content Field
+
+**`field:flex` (HTML/PHP)**
+
+Flexible Content basic field returns 1 row deep:
+
+```
+<?php if ( have_rows( 'field_name' ) ) : ?>
+    <?php while ( have_rows('field_name' ) ) : the_row();
+        if ( get_row_layout() == 'layout_field' ) : ?>
+            <div class="class">
+                <?php the_sub_field( 'field_name' ); ?>
+            </div>
+        <?php endif; ?>
+    <?php endwhile; ?>
+<?php endif; ?>
+
+```
+
+**`field:flex:nested` (HTML/PHP)**
+
+Flexible Content nested field returns the below:
+
+```
+<?php if( have_rows('field_name') ): ?>
+    <?php while ( have_rows('field_name') ) : the_row(); ?>
+        <?php if( get_row_layout() == 'layout_field' ): ?>
+            <?php if( have_rows('layout_rows') ): ?>
+                <ul>
+                    <?php while ( have_rows('layout_rows') ) : the_row(); $image = get_sub_field('sub_field'); ?>
+                        <li><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /></li>
+                    <?php endwhile; ?>
+                </ul>
+            <?php endif; ?>
+        <?php endif; ?>
+    <?php endwhile; ?>
+<?php endif; ?>
+
+```
+
 ### Relationship Field
 
 **`field:relationship` (HTML/PHP)**
