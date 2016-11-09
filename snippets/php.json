@@ -29,6 +29,16 @@
 		"body": "\r\n<?php if ( get_field('${1:field_name}') ) : ?>\r\n\t<a href=\"<?php the_field('${1:field_name}'); ?>\" >${2:Download File}</a>\r\n<?php endif; ?>\r\n\t",
 		"description": "ACF file field (URL)"
 	},
+	"field:flex": {
+	  "prefix": "field:flex",
+	  "body": "\r\n<?php if ( have_rows( '${1:field_name}' ) ) : ?>\r\n\t<?php while ( have_rows('${1:field_name}' ) ) : the_row(); ?>\r\n\t\t<?php if ( get_row_layout() == '${3:layout_field}' ) : ?>\r\n\t\t\t<div class=\"${4:class}\">\r\n\t\t\t\t<?php the_sub_field( '${5:field_name}' ); ?>\r\n\t\t\t</div>\r\n\t\t<?php endif; ?>\r\n\t<?php endwhile; ?>\r\n<?php endif; ?>\r\n",
+	  "description": "ACF flexible content field"
+	},
+	"field:flex:nested": {
+	  "prefix": "field:flex:nested",
+	  "body": "\r\n<?php if( have_rows('${1:field_name}') ): ?>\r\n\t<?php while ( have_rows('${1:field_name}') ) : the_row(); ?>\r\n\t\t<?php if( get_row_layout() == '${2:layout_field}' ): ?>\r\n\t\t\t<?php if( have_rows('${3:layout_rows}') ): ?>\r\n\t\t\t\t<ul>\r\n\t\t\t\t\t<?php while ( have_rows('${3:layout_rows}') ) : the_row(); $image = get_sub_field('${4:sub_field}'); ?>\r\n\t\t\t\t\t\t${5:<li><img src=\"<?php echo $image['url']; ?>\" alt=\"<?php echo $image['alt']; ?>\" /></li>}\r\n\t\t\t\t\t<?php endwhile; ?>\r\n\t\t\t\t</ul>\r\n\t\t\t<?php endif; ?>\r\n\t\t<?php endif; ?>\r\n\t<?php endwhile; ?>\r\n<?php endif; ?>\r\n",
+	  "description": "ACF flexible content nested field"
+	},
 	"field:form": {
 		"prefix": "field:form",
 		"body": "\r\n<?php if ( get_field('${1:field_name}') ) {\r\n\t$form = get_field('${1:field_name}');\r\n\tgravity_form_enqueue_scripts($form->id, true);\r\n\tgravity_form($form->id, ${2:display_title}, ${3:display_description}, false, ${4:field_values}, ${5:enable_ajax}, 1);\r\n} ?>\r\n\t",
