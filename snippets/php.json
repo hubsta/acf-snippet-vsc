@@ -134,9 +134,9 @@
 		"body": "\r\nif( get_field('${1:field_name}', 'option') ) {\r\n\techo get_field('${1:field_name}', 'option');\r\n}\r\n\t",
 		"description": "Display ACF option field"
 	},
-	"field1": {
-		"prefix": "field",
-		"body": "\r\nif( get_field('${1:field_name}') ) {\r\n\techo get_field('${1:field_name}');\r\n}\r\n\t",
-		"description": "Display ACF field"
+	"field:sub": {
+		"prefix": "field:sub",
+		"body": "\r\nif( get_sub_field('${1:field_name}') ) {\r\n\techo get_sub_field('${1:field_name}');\r\n}\r\n\t",
+		"description": "Display ACF sub field"
 	}
 }

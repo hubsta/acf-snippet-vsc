@@ -19,7 +19,7 @@ All tab triggers follow the following naming convention; `field:{field type}:{ty
 
 ### Basic Fields
 
-`field` / `field:header` / `field:text` / `field:link` / `field:option` **(HTML/PHP)**
+`field` / `field:header` / `field:text` / `field:link` / `field:option`  **(HTML/PHP)**
 
 Get a field by name. (Header / text / link fields will be wrapped in `<h*>` / `<p>` / `<a>` tags)
 
@@ -45,6 +45,16 @@ Field conditional. Also used for true/false fields.
 
 ```
 <?php if ( get_field('field_name') ) : ?>
+<?php endif; ?>
+```
+
+**`field:sub` (HTML/PHP)**
+
+Get a field by name, within repeater/flexible.
+
+```
+<?php if ( get_sub_field('field_name') ) : ?>
+  <?php echo get_sub_field('field_name'); ?>
 <?php endif; ?>
 ```
 
