@@ -1,3 +1,7 @@
+## 1.6.0
+
+Added Logo to the project.
+
 ## 1.5.0
 Removed and fixed unused lines.
 
