@@ -1,3 +1,7 @@
+## 1.8.0
+
+ACF can now be triggered within HTML files.
+
 ## 1.6.0
 
 Added Logo to the project.
