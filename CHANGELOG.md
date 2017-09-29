@@ -1,4 +1,4 @@
-## 1.8.1
+## 1.8.2
  * Fix for $ being escaped on variable names in php and html snippets.
 
 ## 1.8.0
