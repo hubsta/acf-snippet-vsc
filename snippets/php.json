@@ -101,7 +101,7 @@
 	},
 	"field:query": {
 		"prefix": "field:query",
-		"body": "\r\n<?php\r\n\r\n$$args = array(\r\n\t'numberposts' => 10,\r\n\t'post_type' => 'post',\r\n\t'meta_key' => '${1:field_name}',\r\n\t'meta_value' => '${2:field_value}'\r\n);\r\n\r\n$query = new WP_Query( $args );\r\n\r\n?>\r\n\r\n<?php if( $$query->have_posts() ) : ?>\r\n\t<ul>\r\n\t<?php while ( $$query->have_posts() ) : $$query->the_post(); ?>\r\n\t\t<li>\r\n\t\t\t<a href=\"<?php the_permalink(); ?>\"><?php the_title(); ?></a>\r\n\t\t</li>\r\n\t<?php endwhile; ?>\r\n\t</ul>\r\n<?php endif; ?>\r\n\r\n<?php wp_reset_query(); ?>\r\n\t",
+		"body": "\r\n<?php\r\n\r\n$$args = array(\r\n\t'numberposts' => 10,\r\n\t'post_type' => 'post',\r\n\t'meta_key' => '${1:field_name}',\r\n\t'meta_value' => '${2:field_value}'\r\n);\r\n\r\n$$query = new WP_Query( $$args );\r\n\r\n?>\r\n\r\n<?php if( $$query->have_posts() ) : ?>\r\n\t<ul>\r\n\t<?php while ( $$query->have_posts() ) : $$query->the_post(); ?>\r\n\t\t<li>\r\n\t\t\t<a href=\"<?php the_permalink(); ?>\"><?php the_title(); ?></a>\r\n\t\t</li>\r\n\t<?php endwhile; ?>\r\n\t</ul>\r\n<?php endif; ?>\r\n\r\n<?php wp_reset_query(); ?>\r\n\t",
 		"description": "Query on an ACF field"
 	},
 	"field:relationship": {
