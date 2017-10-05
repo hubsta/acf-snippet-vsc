@@ -1,3 +1,6 @@
+## 1.8.3
+ * Missing $ from query snippet fix.
+
 ## 1.8.2
  * Fix for $ being escaped on variable names in php and html snippets.
 
