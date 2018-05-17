@@ -1,17 +1,12 @@
+# Snippets for Visual Studio Code : Advanced Custom Fields
+
+[![made-for-VSCode](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)](https://code.visualstudio.com/)
+[![Installs](https://vsmarketplacebadge.apphb.com/installs/anthonydiametrix.ACF-Snippet.svg)](https://marketplace.visualstudio.com/items?itemName=anthonydiametrix.ACF-Snippet)
+[![Badge for version for Visual Studio Code extension anthonydiametrix.ACF-Snippet](https://vsmarketplacebadge.apphb.com/version/anthonydiametrix.ACF-Snippet.svg)](https://marketplace.visualstudio.com/items?itemName=anthonydiametrix.ACF-Snippet)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/hubsta/acf-snippet-vsc/graphs/commit-activity)
+[![GitHub contributors](https://img.shields.io/github/contributors/hubsta/acf-snippet-vsc.svg)](https://GitHub.com/hubsta/acf-snippet-vsc/graphs/contributors/)
+
 Same setup as [smilledge/acf-sublime-snippets](https://github.com/smilledge/acf-sublime-snippets) but for VSC.
-
-## Contributors
-
-<!-- Contributors START
-Anthony_Hubble hubsta http://github.com/hubsta doc
-Michael_Mano michaelmano https://github.com/michaelmano doc tools
-Contributors END -->
-<!-- Contributors table START -->
-
-| [![Anthony Hubble](https://avatars.githubusercontent.com/hubsta?s=100)<br /><sub>Anthony Hubble</sub>](http://github.com/hubsta)<br />[](https://github.com/kentcdodds/all-contributors/commits?author=hubsta) | [![Michael Mano](https://avatars.githubusercontent.com/michaelmano?s=100)<br /><sub>Michael Mano</sub>](https://github.com/michaelmano)<br />[](https://github.com/kentcdodds/all-contributors/commits?author=michaelmano) |
-| :---: | :---: |
-<!-- Contributors table END -->
-
 
 ## Snippets
 
@@ -19,11 +14,11 @@ All tab triggers follow the following naming convention; `field:{field type}:{ty
 
 ### Basic Fields
 
-`field` / `field:header` / `field:text` / `field:link` / `field:option`  **(HTML/PHP)**
+`field` / `field:header` / `field:text` / `field:link` / `field:option` **(HTML/PHP)**
 
 Get a field by name. (Header / text / link fields will be wrapped in `<h*>` / `<p>` / `<a>` tags)
 
-```
+```php
 <?php if ( get_field('field_name') ) : ?>
   <?php echo get_field('field_name'); ?>
 <?php endif; ?>
@@ -33,7 +28,7 @@ Get a field by name. (Header / text / link fields will be wrapped in `<h*>` / `<
 
 Get and format a date field
 
-```
+```php
 <?php if ( get_field('field_name') ) : $date = DateTime::createFromFormat('Ymd', get_field('field_name')); ?>
   <?php echo $date->format('d-m-Y'); ?>
 <?php endif; ?>
@@ -43,7 +38,7 @@ Get and format a date field
 
 Field conditional. Also used for true/false fields.
 
-```
+```php
 <?php if ( get_field('field_name') ) : ?>
 <?php endif; ?>
 ```
@@ -52,7 +47,7 @@ Field conditional. Also used for true/false fields.
 
 Get a field by name, within repeater/flexible.
 
-```
+```php
 <?php if ( get_sub_field('field_name') ) : ?>
   <?php echo get_sub_field('field_name'); ?>
 <?php endif; ?>
@@ -64,7 +59,7 @@ Get a field by name, within repeater/flexible.
 
 Image field with a return value of "Image URL"
 
-```
+```php
 <?php if ( get_field('field_name') ) : ?>
     <img src="<?php the_field('field_name'); ?>" alt="<?php the_field(''); ?>">
 <?php endif; ?>
@@ -74,7 +69,7 @@ Image field with a return value of "Image URL"
 
 Image field with a return value of "Image ID"
 
-```
+```php
 <?php
 if ( get_field('field_name') ) {
   $attachment_id = get_field('field_name');
@@ -88,7 +83,7 @@ if ( get_field('field_name') ) {
 
 Image field with a return value of "Image Object"
 
-```
+```php
 <?php if ( get_field('field_name') ) : $image = get_field('field_name'); ?>
 
   <!-- Full size image -->
@@ -99,13 +94,14 @@ Image field with a return value of "Image Object"
 
 <?php endif; ?>
 ```
+
 ### File Field
 
 **`field:file` (HTML/PHP)**
 
 File field with a return value of "File URL"
 
-```
+```php
 <?php if ( get_field('field_name') ) : ?>
   <a href="<?php the_field('field_name'); ?>" >Download File</a>
 <?php endif; ?>
@@ -115,7 +111,7 @@ File field with a return value of "File URL"
 
 File field with a return value of "File ID"
 
-```
+```php
 <?php
   if ( get_field('field_name') ) :
     $attachment_id = get_field('field_name');
@@ -130,7 +126,7 @@ File field with a return value of "File ID"
 
 File field with a return value of "File Object"
 
-```
+```php
 <?php if ( get_field('field_name') ) : $file = get_field('field_name'); ?>
   <a href="<?php echo $file['url']; ?>"><?php echo $file['title']; ?></a>
 <?php endif; ?>
@@ -142,7 +138,7 @@ File field with a return value of "File Object"
 
 Flexible Content basic field returns 1 row deep:
 
-```
+```php
 <?php if ( have_rows( 'field_name' ) ) : ?>
     <?php while ( have_rows('field_name' ) ) : the_row();
         if ( get_row_layout() == 'layout_field' ) : ?>
@@ -152,14 +148,13 @@ Flexible Content basic field returns 1 row deep:
         <?php endif; ?>
     <?php endwhile; ?>
 <?php endif; ?>
-
 ```
 
 **`field:flex:nested` (HTML/PHP)**
 
 Flexible Content nested field returns the below:
 
-```
+```php
 <?php if( have_rows('field_name') ): ?>
     <?php while ( have_rows('field_name') ) : the_row(); ?>
         <?php if( get_row_layout() == 'layout_field' ): ?>
@@ -173,7 +168,6 @@ Flexible Content nested field returns the below:
         <?php endif; ?>
     <?php endwhile; ?>
 <?php endif; ?>
-
 ```
 
 ### Relationship Field
@@ -181,7 +175,8 @@ Flexible Content nested field returns the below:
 **`field:relationship` (HTML/PHP)**
 
 Get a relationship field and loop over all returned posts.
-```
+
+```php
 <?php $posts = get_field('field_name'); ?>
 <?php if ( $posts ): ?>
   <ul>
@@ -200,7 +195,7 @@ Get a relationship field and loop over all returned posts.
 
 Get the street address from a location field
 
-```
+```php
 <?php if ( get_field('field_name') ) :
   $location = get_field('field_name'); ?>
   <?php echo $location['address']; ?>
@@ -211,7 +206,7 @@ Get the street address from a location field
 
 Get a location field and convert it to a static Google Map
 
-```
+```php
 <?php if ( get_field('field_name') ) :
   $location = get_field('field_name');
   $coordinates = isset( $location['coordinates'] ) ? $location['coordinates'] : $location ; ?>
@@ -223,7 +218,7 @@ Get a location field and convert it to a static Google Map
 
 Get a location field and convert it to an interactive Google Map. Also adds a marker to the location. The CSS is used to prevent rendering issues with map controls caused by most responsive CSS grids.
 
-```
+```php
 <?php if ( get_field('field_name') ) :
   $location = get_field('field_name');
   $coordinates = isset( $location['coordinates'] ) ? $location['coordinates'] : $location ; ?>
@@ -262,7 +257,7 @@ Get a location field and convert it to an interactive Google Map. Also adds a ma
 
 Display a gravity form. The parameters for `gravity_form()` are outlined in the [Gravity Forms documentation](http://www.gravityhelp.com/documentation/page/Embedding_A_Form#Function_Call).
 
-```
+```php
 <?php if ( get_field('field_name') ) {
   $form = get_field('field_name');
   gravity_form_enqueue_scripts($form->id, true);
@@ -270,14 +265,13 @@ Display a gravity form. The parameters for `gravity_form()` are outlined in the 
 } ?>
 ```
 
-
 ### Repeater Field
 
 **`field:repeater` (HTML/PHP)**
 
 Get and loop over a repeater field
 
-```
+```php
 <?php if ( have_rows('field_name') ) : ?>
 
   <?php while( have_rows('field_name') ) : the_row(); ?>
@@ -293,7 +287,7 @@ Get and loop over a repeater field
 
 Loop over a repeater filed and seperate results into rows. The second tabstop is the row length.
 
-```
+```php
 <?php if ( get_field('field_name') ) : ?>
 
   <div class="items">
@@ -321,7 +315,7 @@ Loop over a repeater filed and seperate results into rows. The second tabstop is
 
 Query a post type on a field value and loop over posts
 
-```
+```php
 <?php
 
 $args = array(
@@ -348,15 +342,33 @@ $query = new WP_Query( $args );
 <?php wp_reset_query(); ?>
 ```
 
-
 ### Misc
 
 `ddfield` **(HTML/PHP)**
 
 `var_dump` the field contents wrapped in `<pre>` tags.
 
-```
+```php
 <pre>
     <?php var_dump(get_field('field_name')); die(); ?>
 </pre>
 ```
+
+## Contributors
+
+<!-- Contributors START
+Anthony_Hubble hubsta http://github.com/hubsta doc
+Michael_Mano michaelmano https://github.com/michaelmano doc tools
+Neil Ne-Ne https://github.com/Ne-Ne bugfix
+Contributors END -->
+
+| [![c-1-image]][c-1-link] | [![c-2-image]][c-2-link] | [![c-3-image]][c-3-link] |
+| :----------------------: | :----------------------: | :----------------------: |
+|      Anthony Hubble      |       Michael Mano       |       Neil (Ne Ne)       |
+
+[c-1-image]: https://avatars.githubusercontent.com/hubsta?s=100
+[c-1-link]: http://github.com/hubsta
+[c-2-image]: https://avatars.githubusercontent.com/michaelmano?s=100
+[c-2-link]: http://github.com/michaelmano
+[c-3-image]: https://avatars.githubusercontent.com/Ne-Ne?s=100
+[c-3-link]: http://github.com/Ne-Ne
