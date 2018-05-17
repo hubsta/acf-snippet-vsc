@@ -3,7 +3,7 @@
 	"publisher": "anthonydiametrix",
 	"description": "Advanced Custom Field Snippets",
 	"icon": "images/logo.jpg",
-	"version": "1.8.3",
+	"version": "1.9.0",
 	"engines": {
 		"vscode": "0.10.x"
 	},
