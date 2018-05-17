@@ -1,35 +1,35 @@
 {
-    "name": "ACF-Snippet",
-    "publisher": "anthonydiametrix",
-    "description": "Advanced Custom Field Snippets",
-    "icon": "images/logo.jpg",
-    "version": "1.8.3",
-    "engines": {
-        "vscode": "0.10.x"
-    },
-    "categories": [
-        "Snippets"
-    ],
-    "keywords": [
-        "acf",
-        "Advanced Custom Fields",
-        "WordPress"
-    ],
-    "homepage": "https://github.com/hubsta/acf-snippet-vsc/blob/master/README.md",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/hubsta/acf-snippet-vsc.git"
-    },
-    "contributes": {
-        "snippets": [
-            {
-                "language": "php",
-                "path": "./snippets/php.json"
-            },
-            {
-                "language": "html",
-                "path": "./snippets/html.json"
-            }
-        ]
-    }
+	"name": "ACF-Snippet",
+	"publisher": "anthonydiametrix",
+	"description": "Advanced Custom Field Snippets",
+	"icon": "images/logo.jpg",
+	"version": "1.8.3",
+	"engines": {
+		"vscode": "0.10.x"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"keywords": [
+		"acf",
+		"Advanced Custom Fields",
+		"WordPress"
+	],
+	"homepage": "https://github.com/hubsta/acf-snippet-vsc/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/hubsta/acf-snippet-vsc.git"
+	},
+	"contributes": {
+		"snippets": [
+			{
+				"language": "php",
+				"path": "./snippets/acf.json"
+			},
+			{
+				"language": "html",
+				"path": "./snippets/acf.json"
+			}
+		]
+	}
 }
