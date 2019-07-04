@@ -30,14 +30,14 @@
 		"description": "ACF file field (object)"
 	},
 	"field:flex": {
-	  "prefix": "field:flex",
-	  "body": "<?php if ( have_rows( '${1:field_name}' ) ) : ?>\r\n\t<?php while ( have_rows('${1:field_name}' ) ) : the_row(); ?>\r\n\t\t<?php if ( get_row_layout() == '${3:layout_field}' ) : ?>\r\n\t\t\t<div class=\"${4:class}\">\r\n\t\t\t\t<?php the_sub_field( '${5:field_name}' ); ?>\r\n\t\t\t</div>\r\n\t\t<?php endif; ?>\r\n\t<?php endwhile; ?>\r\n<?php endif; ?>\r\n",
-	  "description": "ACF flexible content field"
+		"prefix": "field:flex",
+		"body": "<?php if ( have_rows( '${1:field_name}' ) ) : ?>\r\n\t<?php while ( have_rows('${1:field_name}' ) ) : the_row(); ?>\r\n\t\t<?php if ( get_row_layout() == '${3:layout_field}' ) : ?>\r\n\t\t\t<div class=\"${4:class}\">\r\n\t\t\t\t<?php the_sub_field( '${5:field_name}' ); ?>\r\n\t\t\t</div>\r\n\t\t<?php endif; ?>\r\n\t<?php endwhile; ?>\r\n<?php endif; ?>\r\n",
+		"description": "ACF flexible content field"
 	},
 	"field:flex:nested": {
-	  "prefix": "field:flex:nested",
-	  "body": "<?php if( have_rows('${1:field_name}') ): ?>\r\n\t<?php while ( have_rows('${1:field_name}') ) : the_row(); ?>\r\n\t\t<?php if( get_row_layout() == '${2:layout_field}' ): ?>\r\n\t\t\t<?php if( have_rows('${3:layout_rows}') ): ?>\r\n\t\t\t\t<ul>\r\n\t\t\t\t\t<?php while ( have_rows('${3:layout_rows}') ) : the_row(); $$image = get_sub_field('${4:sub_field}'); ?>\r\n\t\t\t\t\t\t${5:<li><img src=\"<?php echo $$image['url']; ?>\" alt=\"<?php echo $$image['alt']; ?>\" /></li>}\r\n\t\t\t\t\t<?php endwhile; ?>\r\n\t\t\t\t</ul>\r\n\t\t\t<?php endif; ?>\r\n\t\t<?php endif; ?>\r\n\t<?php endwhile; ?>\r\n<?php endif; ?>\r\n",
-	  "description": "ACF flexible content nested field"
+		"prefix": "field:flex:nested",
+		"body": "<?php if( have_rows('${1:field_name}') ): ?>\r\n\t<?php while ( have_rows('${1:field_name}') ) : the_row(); ?>\r\n\t\t<?php if( get_row_layout() == '${2:layout_field}' ): ?>\r\n\t\t\t<?php if( have_rows('${3:layout_rows}') ): ?>\r\n\t\t\t\t<ul>\r\n\t\t\t\t\t<?php while ( have_rows('${3:layout_rows}') ) : the_row(); $$image = get_sub_field('${4:sub_field}'); ?>\r\n\t\t\t\t\t\t${5:<li><img src=\"<?php echo $$image['url']; ?>\" alt=\"<?php echo $$image['alt']; ?>\" /></li>}\r\n\t\t\t\t\t<?php endwhile; ?>\r\n\t\t\t\t</ul>\r\n\t\t\t<?php endif; ?>\r\n\t\t<?php endif; ?>\r\n\t<?php endwhile; ?>\r\n<?php endif; ?>\r\n",
+		"description": "ACF flexible content nested field"
 	},
 	"field:form": {
 		"prefix": "field:form",
@@ -52,12 +52,12 @@
 	"field:if": {
 		"prefix": "field:if",
 		"body": "<?php if ( get_field('${1:field_name}') ) : ?>\r\n\t$2\r\n<?php endif; ?>\r\n",
-		"description": "ACF true/false"
+		"description": "ACF true|false"
 	},
 	"field:ifelse": {
 		"prefix": "field:ifelse",
 		"body": "<?php if ( get_field('${1:field_name}') ) : ?>\r\n\t$2\r\n<?php else: ?>\r\n\t$3\r\n<?php endif; ?>\r\n",
-		"description": "ACF true/false"
+		"description": "ACF true|false"
 	},
 	"field:image": {
 		"prefix": "field:image",
@@ -77,7 +77,7 @@
 	"field:link": {
 		"prefix": "field:link",
 		"body": "<?php if ( get_field('${1:field_name}') ) : ?>\r\n\t<a href=\"<?php echo get_field('${1:field_name}'); ?>\">$2</a>\r\n<?php endif; ?>\r\n",
-		"description": "ACF link/page"
+		"description": "ACF link|page"
 	},
 	"field:location": {
 		"prefix": "field:location",
