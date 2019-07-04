@@ -27,11 +27,11 @@
 		"snippets": [
 			{
 				"language": "php",
-				"path": "./snippets/acf.json"
+				"path": "./snippets/php-html.json"
 			},
 			{
 				"language": "html",
-				"path": "./snippets/acf.json"
+				"path": "./snippets/php-html.json"
 			}
 		]
 	}
