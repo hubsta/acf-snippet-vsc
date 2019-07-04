@@ -24,6 +24,20 @@
 		"url": "https://github.com/hubsta/acf-snippet-vsc.git"
 	},
 	"contributes": {
+		"languages": [
+			{
+				"id": "blade",
+				"aliases": [
+					"Laravel Blade",
+					"Blade",
+					"blade"
+				],
+				"extensions": [
+					".blade.php"
+				],
+				"configuration": "./blade.configuration.json"
+			}
+		],
 		"snippets": [
 			{
 				"language": "php",
