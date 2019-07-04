@@ -6,10 +6,10 @@
 	"version": "1.9.0",
 	"engines": {
 		"vscode": "0.10.x"
-    },
-    "scripts": {
-        "build": "node ./scripts/build.js"
-    },
+	},
+	"scripts": {
+		"build": "node ./scripts/build.js"
+	},
 	"categories": [
 		"Snippets"
 	],
@@ -32,6 +32,10 @@
 			{
 				"language": "html",
 				"path": "./snippets/php-html.json"
+			},
+			{
+				"language": "blade",
+				"path": "./snippets/blade.json"
 			}
 		]
 	}

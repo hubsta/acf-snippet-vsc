@@ -33,11 +33,13 @@ const main = function main() {
         let obj = {};
 
         snippets.forEach((snippet, key) => {
+            const scope = dir.split('-').join(',');
             const contents = readFileSync(`${directoryPath}/${dir}/${snippet}`, 'utf8');
             const fileName = snippet.split('.')[0];
             const [ prefix, description ] = fileName.split(' - ');
             const body = formatContents(contents);
             obj[prefix] = {
+                scope,
                 prefix,
                 body,
                 description,
