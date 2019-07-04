@@ -1,3 +1,3 @@
-<?php if ( get_field('+{1:field_name}') ) : $date = DateTime::createFromFormat('+{2:Ymd}', get_field('+{1:field_name}')); ?>
-    <?php echo $date->format('+{3:d-m-Y}'); ?>
-<?php endif; ?>
+@if(get_field('+{1:field_name}'))
+    {{ DateTime::createFromFormat('+{2:Ymd}', get_field('+{1:field_name}')->format('+{3:d-m-Y}') }}
+@endif

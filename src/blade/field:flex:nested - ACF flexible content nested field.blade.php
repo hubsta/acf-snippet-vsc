@@ -1,13 +1,20 @@
-<?php if( have_rows('+{1:field_name}') ): ?>
-    <?php while ( have_rows('+{1:field_name}') ) : the_row(); ?>
-        <?php if( get_row_layout() == '+{2:layout_field}' ): ?>
-            <?php if( have_rows('+{3:layout_rows}') ): ?>
+@if(have_rows('+{1:field_name}'))
+    @while(have_rows('+{1:field_name}'))
+        @php
+            the_row();
+        @endphp
+        @if(get_row_layout() == '+{2:layout_field}')
+            @if(have_rows('+{3:layout_rows}'))
                 <ul>
-                    <?php while ( have_rows('+{3:layout_rows}') ) : the_row(); $image = get_sub_field('+{4:sub_field}'); ?>
-                        +{5:<li><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /></li>}
-                    <?php endwhile; ?>
+                    @while(have_rows('+{3:layout_rows}'))
+                        @php
+                            the_row();
+                            $image = get_sub_field('+{4:sub_field}')
+                        @endphp
+                        +{5:<li><img src="{{ $image['url'] }}" alt="{{ $image['alt'] }}" /></li>}
+                    @endwhile
                 </ul>
-            <?php endif; ?>
-        <?php endif; ?>
-    <?php endwhile; ?>
-<?php endif; ?>
+            @endif
+        @endif
+    @endwhile
+@endif
