@@ -21,7 +21,7 @@ const formatContents = function formatContents(content) {
 };
 
 const main = function main() {
-    const dirs = readdirSync(directoryPath).filter(isDirectory);
+    const dirs = readdirSync(directoryPath).filter(item => isDirectory(item));
     const snippetFolderPath = join(__dirname, '../snippets');
     
     if (!existsSync(snippetFolderPath)) {
@@ -34,7 +34,8 @@ const main = function main() {
 
         snippets.forEach((snippet, key) => {
             const contents = readFileSync(`${directoryPath}/${dir}/${snippet}`, 'utf8');
-            const [ prefix, description ] = snippet.replace('.php', '').split(' - ');
+            const fileName = snippet.split('.')[0];
+            const [ prefix, description ] = fileName.split(' - ');
             const body = formatContents(contents);
             obj[prefix] = {
                 prefix,
