@@ -61,7 +61,7 @@
 	},
 	"field:image:id": {
 		"prefix": "field:image:id",
-		"body": "<?php\r\nif ( get_field('${1:field_name}') ) {\r\n\t$$attachment_id = get_field('${1:field_name}');\r\n\t$$size = \"${2:full}\"; // (thumbnail, medium, large, full or custom size)\r\n\twp_get_attachment_image( $$attachment_id, $size );\r\n}\r\n?>\r\n",
+		"body": "<?php\r\nif ( get_field('${1:field_name}') ) {\r\n\t$$attachment_id = get_field('${1:field_name}');\r\n\t$$size = \"${2:full}\"; // (thumbnail, medium, large, full or custom size)\r\n\twp_get_attachment_image( $$attachment_id, $$size );\r\n}\r\n?>\r\n",
 		"description": "ACF image field (ID)"
 	},
 	"field:image:object": {
